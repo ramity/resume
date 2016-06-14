@@ -100,7 +100,7 @@ width:32px;
 height:32px;
 float:left;
 padding:10px;
-background-image:url('https://ramity.com/resume/img/lines.png');
+background-image:url('../img/lines.png');
 background-size:32px 32px;
 background-position:center;
 cursor:pointer;

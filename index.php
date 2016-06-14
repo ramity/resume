@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 	<head>
-		<link type="text/css" rel="stylesheet" href="https://ramity.com/resume/css/resume.css">
+		<link type="text/css" rel="stylesheet" href="css/resume.css">
 		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<title>Resume - Lewis Brown</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="https://ramity.com/resume/js/timer.js"></script>
-		<script src="https://ramity.com/resume/js/input.js"></script>
+		<script src="js/timer.js"></script>
+		<script src="js/input.js"></script>
 		<script>
 		var topbarleftpos="300px";
 		$(function()
@@ -27,7 +27,7 @@
 		<div id="sidebar">
 			<div id="sidebarexp">
 				<div class="sidebarheader">Navigation</div>
-				
+
 				<a class="sidebaritem">Home</a>
 				<a class="sidebaritem">About me</a>
 				<a class="sidebaritem">Personal Objective</a>
@@ -35,9 +35,9 @@
 				<a class="sidebaritem">Skills</a>
 				<a class="sidebaritem">Experience</a>
 				<a class="sidebaritem">Education</a>
-				
+
 				<div class="sidebarheader2">Social</div>
-				
+
 				<a class="sidebaritem2" target="_blank" href="https://www.facebook.com/DB2.SB">Facebook</a>
 				<a class="sidebaritem2" target="_blank" href="mailto:ramitydotcom@gmail.com">Email</a>
 				<a class="sidebaritem2" target="_blank" href="https://divirted.tumblr.com">Tumblr</a>
@@ -46,7 +46,7 @@
 				<a class="sidebaritem2" target="_blank" href="https://steamcommunity.com/id/DB2">Steam</a>
 				<a class="sidebaritem2" target="_blank" href="https://facebook.com/ramitydotcom">Ramity Facebook</a>
 				<a class="sidebaritem2" target="_blank" href="https://ramity.com">Website</a>
-				
+
 				<script>
 				$('.sidebaritem,.sidebaritem2').hover(function(){
 					$(this).stop().animate({paddingLeft:"40px",width:"215px",color:"#fff"},250);
@@ -82,7 +82,7 @@
 				<canvas id="game" width="900" height="650"></canvas>
 				<script>
 				var walls=[];
-				
+
 				var canvasw=900;
 				var canvash=650;
 				var gameareaw=900;
@@ -91,62 +91,62 @@
 				var mypos;
 				var cxpos=10;
 				var cypos=10;
-				
+
 				var cw=20;
 				var ch=20;
 				var cSpeed=5;
 				var walkingSpeed=5;
 				var runningSpeed=10;
-				
+
 				var cHealth=200;
 				var cSprint=200;
 				var cMana=200;
-				
+
 				var timer=$.timer(function()
 				{
 					clear();
 					draw();
 					regen();
 				});
-				
+
 				function regen()
 				{
-					
+
 				}
-				
+
 				timer.set({time:10,autostart:true});
-				
+
 				jQuery('#game').mousedown(function(e){e.preventDefault();});
-				
+
 				document.getElementById('game').addEventListener('mousemove', function(evt)
 				{
 					rect=document.getElementById('game').getBoundingClientRect();
 					mxpos=evt.clientX-rect.left;
 					mypos=evt.clientY-rect.top;
 				});
-				
+
 				kd.run(function(){kd.tick();});
-				
+
 				kd.W.down(function()
 				{
 					tmove(cxpos,cypos-cSpeed);
 				});
-				
+
 				kd.A.down(function()
 				{
 					tmove(cxpos-cSpeed,cypos);
 				});
-				
+
 				kd.S.down(function()
 				{
 					tmove(cxpos,cypos+cSpeed);
 				});
-				
+
 				kd.D.down(function()
 				{
 					tmove(cxpos+cSpeed,cypos);
 				});
-				
+
 				kd.SHIFT.down(function()
 				{
 					if(cSprint>0)
@@ -155,12 +155,12 @@
 						cSprint--;
 					}
 				});
-				
+
 				kd.SHIFT.up(function()
 				{
 					cspeed=walkingSpeed;
 				});
-				
+
 				function tmove(inputx,inputy)
 				{
 					if(inputx>=0&&inputx<=gameareaw-cw&&inputy>=0&&inputy<=gameareah-ch)
@@ -169,7 +169,7 @@
 						cypos=inputy;
 					}
 				}
-				
+
 				function clear()
 				{
 					c=document.getElementById("game");
@@ -177,7 +177,7 @@
 					ctx.fillStyle="#fff";
 					ctx.fillRect(0,0,canvasw,canvash);
 				}
-				
+
 				function draw()
 				{
 					//start variables
@@ -218,10 +218,10 @@
 		</div>
 		<script>
 		var sideBarOpen=false;
-		
+
 		windowWidth=$(window).width();
 		reducedWindowWidth=windowWidth-300;
-		
+
 		$('#opensidebar').click(function(){
 			if(sideBarOpen)
 			{
@@ -234,7 +234,7 @@
 			{
 				$('#sidebar').show();
 				$('#sidebar').stop().animate({width:"300px"},1000);
-				
+
 				if($('#sidebarexp').innerHeight()>$('#sidebar').innerHeight())
 				{
 					topbarleftpos="315px";
